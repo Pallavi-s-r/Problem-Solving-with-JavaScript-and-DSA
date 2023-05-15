@@ -1,0 +1,22 @@
+/**
+ * @param {number} n
+ * @return {number}
+ */
+var countDigitOne = function(n) {
+  let count = 0;
+
+  for (let digit = 1; digit <= n; digit = digit*10) {
+    const divisor = digit * 10;
+    const quotient = Math.floor(n / divisor);
+    const remainder = n % divisor;
+
+    count += quotient * digit;
+
+    if (remainder >= digit) {
+      count += Math.min(remainder - digit + 1, digit);
+    }
+  }
+
+  return count;
+};
+
