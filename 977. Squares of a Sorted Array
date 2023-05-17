@@ -1,0 +1,9 @@
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var sortedSquares = function(nums) {
+    let newArray = nums.map(num =>num**2)
+    let sorted = newArray.sort((a,b)=>a-b);
+    return sorted;
+};
